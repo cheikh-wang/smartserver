@@ -1,0 +1,1 @@
+include ':app', ':server-compiler', ':server-generated', ':server-core', ':server-annotation'
