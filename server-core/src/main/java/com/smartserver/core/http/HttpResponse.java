@@ -89,6 +89,10 @@ public class HttpResponse extends Component {
     }
 
     public void sendHeaders() {
+        final long time = System.currentTimeMillis();
+        rawResponse.setValue("Server", "SmartServer");
+        rawResponse.setDate("Date", time);
+        rawResponse.setDate("Last-Modified", time);
         if (!headers.isEmpty()) {
             for (Map.Entry<String, String> entity : headers.entrySet()) {
                 rawResponse.setValue(entity.getKey(), entity.getValue());
